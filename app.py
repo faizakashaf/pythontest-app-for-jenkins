@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 
 def get_greeting(name):
@@ -12,6 +13,6 @@ def get_greeting(name):
 
     return f"{greeting}, {name}! Have a great day! 😊"
 
-# Get user's name
-user_name = input("Enter your name: ")
+# Read name from environment variable (fallback to "JenkinsUser" if not set)
+user_name = os.getenv("USERNAME", "JenkinsUser")
 print(get_greeting(user_name))
