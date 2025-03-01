@@ -1,13 +1,17 @@
 from datetime import datetime
 
-def greet():
+def get_greeting(name):
     current_hour = datetime.now().hour
 
     if current_hour < 12:
-        return "Good morning! ☀️"
+        greeting = "Good morning"
     elif current_hour < 18:
-        return "Good afternoon! 🌤️"
+        greeting = "Good afternoon"
     else:
-        return "Good evening! 🌙"
+        greeting = "Good evening"
 
-print(greet())
+    return f"{greeting}, {name}! Have a great day! 😊"
+
+# Get user's name
+user_name = input("Enter your name: ")
+print(get_greeting(user_name))
